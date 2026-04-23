@@ -7,6 +7,9 @@
 
 A **premium decentralized application (DApp)** that prevents double financing of properties using blockchain technology. Built with Solidity, Hardhat, React, and TypeScript.
 
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/5e08016b-e873-4101-958d-2b634e80dd5d" />
+
+
 ---
 
 ## 🎯 Problem Statement
