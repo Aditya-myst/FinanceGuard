@@ -1,6 +1,3 @@
-Here is your complete `README.md` file ready to copy and paste into your project root:
-
-```markdown
 # 🏠 FinanceGuard - Double Financing Alert DApp
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -18,23 +15,21 @@ A **premium decentralized application (DApp)** that prevents double financing of
 
 Double financing occurs when a property is mortgaged multiple times to different lenders without disclosure. This leads to:
 
-- 💸 **$1.2 Billion Annual Loss** globally  
-- 🔓 Loss of trust in financial systems  
-- ⏰ Manual verification taking 3-5 days  
-- 💰 High administrative costs  
+* 💸 **$1.2 Billion Annual Loss** globally
+* 🔓 Loss of trust in financial systems
+* ⏰ Manual verification taking 3-5 days
+* 💰 High administrative costs
 
 ### Real-World Example
 
 ```
-
 John owns a property worth $500,000
-↓
+    ↓
 Goes to Bank A → Gets $400,000 mortgage
-↓
+    ↓
 Goes to Bank B → Claims same property → Gets another $400,000 mortgage
-↓
+    ↓
 RESULT: Same property now has TWO mortgages (FRAUD!)
-
 ```
 
 ---
@@ -43,53 +38,53 @@ RESULT: Same property now has TWO mortgages (FRAUD!)
 
 FinanceGuard is a blockchain-based DApp that:
 
-1. 🔐 Maintains Privacy (cryptographic hashing)  
-2. ⚡ Instant Verification (< 1 second)  
-3. 🛡️ Prevents Fraud (99.9% effective)  
-4. 📊 Transparent Audit Trail  
-5. 🌍 24/7 Availability  
+1. 🔐 Maintains Privacy - Cryptographic hashing
+2. ⚡ Instant Verification - < 1 second
+3. 🛡️ Prevents Fraud - Real-time detection
+4. 📊 Transparent Audit Trail
+5. 🌍 24/7 Availability
 
 ---
 
 ## 🚀 Key Features
 
 ### Smart Contract Features
-- Privacy-preserving property registration  
-- Automatic double financing detection  
-- Real-time alerts  
-- Mortgage lifecycle management  
-- Multi-property support  
-- Immutable records  
-- Access control  
+
+* Privacy-preserving property registration
+* Automatic double financing detection
+* Real-time alerts
+* Mortgage lifecycle management
+* Multi-property support
+* Immutable records
+* Access control
 
 ### Frontend Features
-- Premium UI/UX (glassmorphism)  
-- MetaMask integration  
-- Responsive design  
-- Animations & transitions  
-- Real-time updates  
-- Toast notifications  
+
+* Premium UI/UX (glassmorphism)
+* MetaMask wallet integration
+* Fully responsive design
+* Smooth animations
+* Real-time updates
+* Toast notifications
 
 ### Backend Features
-- 26 unit tests (100% passing)  
-- Gas optimization  
-- Deployment scripts  
-- TypeScript support  
+
+* 26 unit tests (100% passing)
+* Gas optimization
+* Deployment scripts
+* TypeScript support
 
 ---
 
 ## 📊 Test Results
 
 ```
-
 26/26 Tests Passing (100%)
 
 Gas Usage:
-
-* Deployment: ~600K gas
-* Register: ~128K - 202K
-* Close: ~29K
-
+- Deployment: ~600K gas
+- Register Mortgage: ~128K - 202K gas
+- Close Mortgage: ~29K gas
 ```
 
 ---
@@ -97,36 +92,50 @@ Gas Usage:
 ## 🛠️ Technology Stack
 
 ### Smart Contracts
-- Solidity 0.8.19  
-- Hardhat  
-- Mocha + Chai  
+
+* Solidity 0.8.19
+* Hardhat
+* Mocha & Chai
 
 ### Frontend
-- React 18.2  
-- TypeScript  
-- Tailwind CSS  
-- Ethers.js v6  
 
-### Backend
-- Hardhat Node  
-- npm / yarn  
+* React 18.2
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* Ethers.js v6
+
+### Backend / Infra
+
+* Hardhat Node
+* npm / yarn
 
 ---
 
 ## 📁 Project Structure
 
 ```
-
 double-financing-alert/
+│
 ├── contracts/
+│   └── DoubleFinancingAlert.sol
+│
 ├── scripts/
+│   ├── deploy.ts
+│   └── interact.ts
+│
 ├── test/
+│   └── DoubleFinancingAlert.test.ts
+│
 ├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
 ├── artifacts/
 ├── typechain-types/
 ├── README.md
-
-````
+```
 
 ---
 
@@ -134,9 +143,10 @@ double-financing-alert/
 
 ### Prerequisites
 
-- Node.js >= 16  
-- MetaMask  
-- Git  
+* Node.js >= 16
+* npm or yarn
+* MetaMask
+* Git
 
 ### Installation
 
@@ -149,19 +159,32 @@ npm install
 cd frontend
 npm install
 cd ..
-````
+```
 
-### Run Locally
+---
+
+## ▶️ Running Locally
+
+### Terminal 1
 
 ```bash
 npm run node
-npm run deploy:localhost
+```
 
+### Terminal 2
+
+```bash
+npm run deploy:localhost
+```
+
+### Terminal 3
+
+```bash
 cd frontend
 npm start
 ```
 
-App runs at: `http://localhost:3000`
+App runs at: **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
@@ -169,7 +192,7 @@ App runs at: `http://localhost:3000`
 
 ### 1. Connect Wallet
 
-Use MetaMask
+Connect using MetaMask
 
 ### 2. Generate Property Hash
 
@@ -177,11 +200,11 @@ Enter property details → Generate hash
 
 ### 3. Register Mortgage
 
-Submit hash + amount → Confirm transaction
+Submit property hash + amount → Confirm transaction
 
-### 4. Check Status
+### 4. Check Property Status
 
-View mortgage info in real-time
+View mortgage details in real-time
 
 ### 5. Close Mortgage
 
@@ -192,11 +215,11 @@ Close after repayment
 ## 🔐 Smart Contract Functions
 
 ```solidity
-hashPropertyDetails(...)
-registerMortgage(...)
-closeMortgage(...)
-getMortgageDetails(...)
-checkPropertyStatus(...)
+hashPropertyDetails(string address, uint256 propertyId)
+registerMortgage(bytes32 propertyHash, uint256 amount)
+closeMortgage(bytes32 propertyHash)
+getMortgageDetails(bytes32 propertyHash)
+checkPropertyStatus(bytes32 propertyHash)
 ```
 
 ---
@@ -229,12 +252,12 @@ npx hardhat run scripts/deploy.ts --network sepolia
 
 ## 📊 Performance Metrics
 
-| Metric   | Value    |
-| -------- | -------- |
-| Speed    | < 1 sec  |
-| Gas      | 29K–202K |
-| Uptime   | 24/7     |
-| Coverage | 100%     |
+| Metric   | Value      |
+| -------- | ---------- |
+| Speed    | < 1 second |
+| Gas      | 29K – 202K |
+| Uptime   | 24/7       |
+| Coverage | 100%       |
 
 ---
 
@@ -243,26 +266,26 @@ npx hardhat run scripts/deploy.ts --network sepolia
 * Hashed property data
 * Access control
 * Fraud detection
-* Immutable records
+* Immutable blockchain records
 
 ---
 
 ## 🎓 Learning Outcomes
 
-* Smart contracts
-* Web3 + React
+* Smart contract development
+* Web3 + React integration
 * Testing strategies
 * Gas optimization
-* TypeScript
+* TypeScript usage
 
 ---
 
 ## 🤝 Contributing
 
 ```bash
-git checkout -b feature/new-feature
+git checkout -b feature/amazing-feature
 git commit -m "Add feature"
-git push origin feature/new-feature
+git push origin feature/amazing-feature
 ```
 
 ---
@@ -271,7 +294,7 @@ git push origin feature/new-feature
 
 * Mobile app
 * Multi-chain support
-* Analytics
+* Advanced analytics
 * DAO governance
 
 ---
@@ -280,6 +303,7 @@ git push origin feature/new-feature
 
 * Ethereum-only
 * Requires MetaMask
+* No off-chain verification
 
 ---
 
@@ -301,7 +325,7 @@ MIT License
 
 | Feature | Traditional | FinanceGuard  |
 | ------- | ----------- | ------------- |
-| Speed   | Days        | Seconds       |
+| Speed   | 3-5 days    | < 1 second    |
 | Cost    | High        | Low           |
 | Trust   | Centralized | Decentralized |
 
@@ -325,8 +349,9 @@ npm run test:coverage
 
 ### Users
 
-* Verify hashes
+* Verify property hash carefully
 * Keep wallet secure
+* Monitor transactions
 
 ---
 
@@ -336,23 +361,12 @@ npm run test:coverage
 
 * Initial release
 * Full test suite
+* UI/UX completed
 
 ---
 
 <div align="center">
 
-Built with ❤️ for financial security
+**Built with ❤️ for financial security**
 
 </div>
-```
-
----
-
-If you want, I can also:
-
-* Generate a **clean GitHub repo structure**
-* Create **LICENSE file automatically**
-* Add **badges, screenshots, or demo GIFs**
-* Help you **deploy this project live**
-
-Just tell me 👍
